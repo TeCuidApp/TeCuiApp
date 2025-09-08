@@ -24,6 +24,8 @@ class Report(models.Model):
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='general')
     status = models.CharField(max_length=15, choices=STATUS_CHOICES, default='draft')
     
+    is_active = models.BooleanField(default=True) 
+
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
